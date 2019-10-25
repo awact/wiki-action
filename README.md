@@ -1,4 +1,4 @@
-# wiki-sync-action
+# wiki-action
 
 Github action to sync to Github wiki.  
 Fork of [wiki-page-creator-action](https://github.com/Decathlon/wiki-page-creator-action)  
