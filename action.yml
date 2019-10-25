@@ -1,0 +1,40 @@
+name: "Github Wiki Sync Action"
+description: "Github action to sync to Github wiki."
+branding:
+  color: "yellow"
+  icon: "upload-cloud"
+inputs:
+  ACTION_MAIL:
+    description: "Github Config Email to Push to Repo."
+    required: true
+    default: null
+  ACTION_NAME:
+    description: "Github Config Username to Push to Repo."
+    required: true
+    default: null
+  OWNER:
+    description: "Target Owner of the Wiki Repo"
+    required: true
+    default: null
+  REPO_NAME:
+    description: "Target Repo of the Wiki Repo"
+    required: true
+    default: null
+  MD_FOLDER:
+    description: "Local Directory to Sync/Upload to Wiki."
+    required: false
+    defualt: "."
+  SKIP_MD:
+    description: "Local Directory to Avoid Sync/Upload to Wiki."
+    required: false
+    defualt: none
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.ACTION_MAIL }}
+    - ${{ inputs.ACTION_NAME }}
+    - ${{ inputs.OWNER }}
+    - ${{ inputs.REPO_NAME }}
+    - ${{ inputs.MD_FOLDER }}
+    - ${{ inputs.MD_FOLDER }}
