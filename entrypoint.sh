@@ -37,8 +37,8 @@ cd ..
 
 find $MD_FOLDER -type f | grep -i md$ | xargs -i cp {} $TMP_CLONE_FOLDER
 
-echo "Pushing new pages"
+echo "Pushing Wiki Pages"
 cd $TMP_CLONE_FOLDER
 git add .
-git commit -m "$WIKI_PUSH_MESSAGE"
+git commit -m "Pushing Wiki Pages"
 git push --set-upstream https://${GH_PAT}@github.com/$OWNER/$REPO_NAME.wiki.git master
